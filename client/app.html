@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🏠 Bangalore House Price Predictor</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+
+  <div class="container">
+    <form id="price-form" class="form-card">
+      <h2>🏡 House Price Predictor</h2>
+
+      <label for="location">📍 Location</label>
+      <input list="locations" id="location" name="location" placeholder="e.g. Indira Nagar" required />
+      <datalist id="locations">
+        <option value="1st Phase JP Nagar">
+        <option value="Indira Nagar">
+        <option value="Whitefield">
+        <option value="HSR Layout">
+        <option value="Koramangala">
+      </datalist>
+
+      <label for="sqft">📐 Total Square Feet</label>
+      <input type="number" id="sqft" name="total_sqft" placeholder="e.g. 1200" required min="100" />
+
+      <label for="bhk">🛏️ BHK</label>
+      <input type="number" id="bhk" name="bhk" placeholder="e.g. 3" required min="1" />
+
+      <label for="bath">🛁 Bathrooms</label>
+      <input type="number" id="bath" name="bath" placeholder="e.g. 2" required min="1" />
+
+      <button type="submit">🔍 Predict Price</button>
+
+      <div id="result"></div>
+      <div id="error"></div>
+    </form>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

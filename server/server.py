@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, send_from_directory
 import os
-import util
+from . import util
 
 # Dynamically resolve the absolute path to the client folder
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))

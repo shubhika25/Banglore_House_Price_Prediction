@@ -32,5 +32,8 @@ def serve_css():
     return send_from_directory('../client', 'app.css')
 
 if __name__ == '__main__':
-    util.load_saved_artifacts()
-    app.run(debug=True)
+        util.load_saved_artifacts()
+        import os
+        port = int(os.environ.get("PORT", 5000))  # Use Render's assigned port
+        app.run(host='0.0.0.0', port=port)
+        app.run(debug=True)

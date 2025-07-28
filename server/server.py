@@ -1,7 +1,12 @@
-from flask import Flask, request, jsonify , send_from_directory
+from flask import Flask, request, jsonify, send_from_directory
+import os
 import util
 
-app = Flask(__name__ , static_folder='../client')
+# Dynamically resolve the absolute path to the client folder
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CLIENT_FOLDER = os.path.join(BASE_DIR, '..', 'client')
+
+app = Flask(__name__, static_folder=CLIENT_FOLDER)
 
 @app.route('/predict_home_price', methods=['POST'])
 def predict_home_price():
@@ -19,21 +24,21 @@ def predict_home_price():
         return jsonify(response)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+# Serve HTML, JS, CSS files
 @app.route('/')
 def serve_index():
-    return send_from_directory('../client', 'app.html')
+    return send_from_directory(CLIENT_FOLDER, 'app.html')
 
 @app.route('/app.js')
 def serve_js():
-    return send_from_directory('../client', 'app.js')
+    return send_from_directory(CLIENT_FOLDER, 'app.js')
 
 @app.route('/app.css')
 def serve_css():
-    return send_from_directory('../client', 'app.css')
+    return send_from_directory(CLIENT_FOLDER, 'app.css')
 
 if __name__ == '__main__':
-        util.load_saved_artifacts()
-        import os
-        port = int(os.environ.get("PORT", 5000))  # Use Render's assigned port
-        app.run(host='0.0.0.0', port=port)
-  
+    util.load_saved_artifacts()
+    port = int(os.environ.get("PORT", 5000))  # Render/Heroku port if set
+    app.run(host='0.0.0.0', port=port, debug=True)

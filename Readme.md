@@ -30,3 +30,25 @@ The goal of this project is to build a regression model that can estimate the pr
 - **Render** for deployment
 - **Jupyter Notebook** for EDA and model development
 
+## Model Evaluation and Selection
+Approach
+Cross-Validation:
+Applied ShuffleSplit cross-validation with 5 splits and 20% test size to reliably estimate model performance and reduce overfitting risks.
+
+Algorithms Tested:
+
+Linear Regression
+
+Lasso Regression (with tuning for alpha and selection)
+
+Decision Tree Regressor (with default parameters)
+
+Hyperparameter Tuning:
+Used GridSearchCV to optimize model parameters and identify the best configurations.
+
+| Model             | Best (R^2) Score | Best Hyperparameters                        |
+| ----------------- | ---------------- | ------------------------------------------- |
+| Linear Regression | 0.83             | Default parameters                          |
+| Lasso Regression  | 0.68             | alpha=1, selection='cyclic'                 |
+| Decision Tree     | 0.74             | criterion='squared\_error', splitter='best' |
+

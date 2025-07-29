@@ -3,7 +3,7 @@
 
 Predict real estate prices in Bangalore using features like location, square footage, number of bathrooms, and bedrooms. This is a full-stack machine learning project with an interactive frontend, Flask API backend, and deployment on Render.
 
-![Screenshot]<img width="1824" height="955" alt="image" src="https://github.com/user-attachments/assets/3ad624db-30d1-4277-a88c-0470d7de0ec5" />
+[Screenshot]<img width="1824" height="955" alt="image" src="https://github.com/user-attachments/assets/3ad624db-30d1-4277-a88c-0470d7de0ec5" />
 
 ---
 

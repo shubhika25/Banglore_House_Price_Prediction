@@ -1,4 +1,4 @@
-<img width="1824" height="955" alt="image" src="https://github.com/user-attachments/assets/795e9ca2-e8ca-4d9d-9bc0-25589f72d3b5" />
+
 # Bangalore House Price Prediction
 
 Predict real estate prices in Bangalore using features like location, square footage, number of bathrooms, and bedrooms. This is a full-stack machine learning project with an interactive frontend, Flask API backend, and deployment on Render.
